@@ -2,6 +2,7 @@ Buenas tardes, estos son mis respuestas del cuestionario del curso.
 
 Aqui dejo el link del Repositorio donde estan los ejercicios mas interesantes de esta prueba.
 
+https://github.com/nelsonroez29/Curso_Practico_Js_Platzi.git
 
 
 **Variables y operaciones**
