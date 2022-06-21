@@ -1,0 +1,713 @@
+Buenas tardes, estos son mis respuestas del cuestionario del curso.
+
+Aqui dejo el link del Repositorio donde estan los ejercicios mas interesantes de esta prueba.
+
+
+
+**Variables y operaciones**
+
+1. Responde las siguientes preguntas en la sección de comentarios:
+
+¿Qué es una variable y para qué sirve?
+
+R: Es un lugar en memoria, y sirve para almacenar datos de cualquier tipo.
+
+¿Cuál es la diferencia entre declarar e inicializar una variable?
+
+R: Declarar; se refiere cuando se le atribuye un nombre para identificarla.
+
+Inicializar; se refiere cuando se atribuye un valor para que sea almacenado en ella.
+
+¿Cuál es la diferencia entre sumar números y concatenar strings?
+
+R. Sumar números: Hace referencia a la operación aritmética de adición, es decir 2 + 2 = 4.
+
+Concatenar Strings: Hace referencia a la **UNION** de dos cadenas de texto en una sola, es decir **¨Ho¨** + **¨la¨** daría como resultado **¨Hola¨**.
+
+Pero si hablamos de la coerción implícita, cuando se somete un numero y un string, daría como resultado la concatenación de strings, 2 + **¨2¨** = **¨22¨** .
+
+2.  Determina el nombre y tipo de dato para almacenar en variables la siguiente información:
+
+Nombre = Es de tipo String (Cadena de texto) y es primitivo
+
+Apellido= Es de tipo String (Cadena de texto) y es primitivo
+
+Nombre de usuario en Platzi = Es de tipo String (Cadena de texto) y es primitivo
+
+Edad = Es de tipo Number y es primitivo
+
+Correo electrónico = Es de tipo String (Cadena de texto) y es primitivo
+
+Mayor de edad = Debido al nombre de esta variable la veo desde 2 puntos distintos. 
+
+	a. Es de tipo Number porque la edad se almacena con un valor numérico.
+
+	b. Puede también ser un booleano, ya que gracias a un condicional ternario se puede guardar en una variable el resultado de la verificación de una edad, ya que el significado de mayor de edad hace referencia a valores numéricos igual o por encima de 18 años, y un condicional (edad>=18) puede determinar a través de valores booleanos, de si es o no es mayor de edad.
+
+En estos casos son variable de tipo primitivo, debido a que no son objetos y por ende no puede hacer uso de métodos.
+
+Dinero ahorrado = Es de tipo Number y es primitivo. Puede ser el resultado de la diferencia entre el dinero bruto que tiene una persona menos las deudas o gastos que tiene, es decir la utilidad.
+
+Deudas = Debido al nombre de esta variable la veo desde 2 puntos distintos. 
+
+	a. Es de tipo Number porque al referirse a deudas normalmente se entiende desde un concepto de egresos o cuentas por pagar, por ende se almacena con un valor numérico, puede ser la sumatoria o un valor total.
+
+	b. Pero también al ser una variable escrita en plural, y por el significado que ella tiene, por su contexto puede referirse a un listado de varias cuentas por pagar, pasaría siendo una estructura de datos, es decir a un array, es decir de tipo objeto o no primitivo.
+
+
+3. Traduce a código JavaScript las variables del ejemplo anterior y deja tu código en los comentarios.
+
+
+
+```
+//Nombre
+var nombre = "Juan";
+
+//Apellido
+var apellido = "Pérez";
+
+//Nombre de usuario en Platzi
+var nicknamePlatzi = "juanpez20";
+
+//Edad
+var edad = 20;
+
+//Correo electrónico
+var email = "juanpez20@gmail.com";
+
+//Mayor de edad
+//1
+var edadMayor = 19;
+
+//2
+var edadMayor = edad >= 18 ? true : false;
+
+//Dinero ahorrado
+//1
+var dineroAhorro2 =15000;
+
+//2
+var dineroAhorro2 = dineroBruto - gastos;
+
+//Deudas
+
+//1
+var deudas1 = 10000;
+
+//2
+var deudas2 = servicioLuz + servicioAgua + servicioInternet;
+
+//3
+var deudas3 = ["servicioLuz", "servicioAgua", "servicioInternet"];
+
+```
+
+4. Calcula e imprime las siguientes variables a partir de las variables del ejemplo anterior:
+
+
+```
+//Nombre completo (nombre y apellido)
+
+var nombre = "Juan";
+var apellido = "Pérez";
+
+var fullname = `${nombre} ${apellido}`;
+
+// o tambien
+
+var fullname2 = nombre+" "+apellido;
+
+
+//Dinero real (dinero ahorrado menos deudas)
+
+var dineroAhorro2 =15000;
+var deudas1 = 10000;
+
+var dineroReal = dineroAhorro2 - deudas;
+
+```
+
+**Funciones**
+
+1.  Responde las siguientes preguntas en la sección de comentarios:
+
+¿Qué es una función?
+
+R: Hace referencia a un trozo o conjunto de código encapsulado que ejecuta una tarea en particular, el cual puede ser llamado n veces.
+
+¿Cuándo me sirve usar una función en mi código?
+
+R: Cuando es necesario ejecutar varias veces una tarea en distintas partes del código, para evitar así la redundancia, es decir cuando se requiera reutilizar código sin escribir muchas líneas.
+
+¿Cuál es la diferencia entre parámetros y argumentos de una función?
+
+R. Lo Parámetros: Son aquellas variables o datos que se le pasan a una función para que ésta pueda utilizar su valor dentro del scope local, es decir en el código que encapsula la función.
+
+Los Argumentos: Aquí siendo sincero no lo sabia, busque por google, y por lo que entiendo es que es un especie de array, pero no en su totalidad, ya que no goza de todos los metodos a exception del lenght, y yo al comprobar su comportamiento en la consola, es como si hiciera un recorrido por los parametros que se colocan al llamar la funcion, y cada parámetro se indexara desde el valor 0 hasta n, y se llaman como si fuera un array argument[0], argument[1], argument[2] ... argument[n].
+
+2. Convierte el siguiente código en una función, pero, cambiando cuando sea necesario las variables constantes por parámetros y argumentos en una función:
+
+
+
+```
+const name = "Juan David";
+const lastname = "Castro Gallego";
+const completeName = name + lastname;
+const nickname = "juandc";
+
+console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+```
+
+Respuesta.
+
+
+
+```
+function miPresentacion (namedef, lastnamedef, nicknamedef){
+    const name = namedef;
+    const lastname = lastnamedef;
+    const completeName = name + lastname;
+    const nickname = nicknamedef;
+    
+    console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+    
+}
+```
+
+Pero una sugerencia que yo daría es que en este caso agregaría algo extra en la variable completeName, ya que para el mensaje debe haber una separación entre el nombre y el apellido, quedando finalmente asi.
+
+```
+function miPresentacion (namedef, lastnamedef, nicknamedef){
+    const name = namedef;
+    const lastname = lastnamedef;
+    const completeName = name +" "+ lastname;
+    const nickname = nicknamedef;
+    
+    console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+    
+}
+```
+
+Ahora la Versión usando los argumentos seria la siguiente:
+
+
+
+```
+function miPresentacion (a, b, c){
+    const name = arguments[0];
+    const lastname = arguments[1];
+    const completeName = name +" "+ lastname;
+    const nickname = arguments[2];
+    
+    console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+    
+}
+```
+
+
+y para llamar la función en cualquier de los casos seria:
+
+
+```
+miPresentacion("Nelson Francisco", "Rodríguez Barrios", "nelsonroez")
+```
+
+**Condicionales**
+
+1. Responde las siguientes preguntas en la sección de comentarios:
+
+¿Qué es una condicional?
+
+R: Es la expresión sintáctica que permite establecer el flujo de ejecución del código, en simples palabras es la manera en como establecer que parte del código puede o no ejecutarse.
+
+¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?
+
+R: Desde mi punto de vista los divido en 3 grupos por su sintaxis:
+
+1. Serie A: (if, else if, else): Este conjunto de condicionales por su sintaxis se deben usar juntos, por supuesto en función al caso que se aborda, 
+
+	a. El **if(){}** se emplea para iniciar el condicional, donde se establecerá en su parámetro la condición que se debe cumplir para ejecutar un trozo de código de ser verdadera.
+
+	b. El **else if(){}** se emplea para dar una segunda o mas condiciones, es decir que puede usarse varias veces con condicionales distintos, normalmente se usa cuando no se cumple el **if(){}** o los primeros **if else(){}**, ahora si alguno de los **if else(){}** cumple su condición automáticamente se ejecuta el código que encapsula el mismo, la forma de leerlo seria si este no se cumple entonces puede ser este,
+
+	c. El **else** es el condicional que se ejecuta si solo si ninguno de los otros condicionales (**if o else if**) se cumple, la forma de leerlo seria si ninguno de los otros se cumple, si no entonces será esto ultimo. Es decir es el cierre como condición que niega a todas las anteriores.
+
+
+2. Serie B: (switch, case, default): Este conjunto de condicionales por su sintaxis se deben usar juntos, por supuesto en función al caso que se aborda.
+
+	a. El **switch(){}** se utiliza para establecer una condicion como su parametro, cuyo resultado sera estudiado en cada caso.
+
+	b. Los **case** Son los casos de estudio del resultado del condicional del switch, esto se refiere a que los casos no establecen condicionales, sino que evalúan el resultado que puede tener el switch, y lo hacen estableciendo valores posibles que puede llegar a tener el resultado del condicional de switch, cada case solo puede tener un valor para comparar con el resultado del switch, si este valor es verdadero o igual, se ejecutara el código que encapsula el case, de lo contrario se pasara al siguiente case o default. Hay que aclarar que en cada case, se debe finalizar con un break para parar la ejecución del switch
+
+	c. El **default** es el resultado absoluto que niega a todos los valores de los case anteriores, es decir que si el resultado del switch no es verdadero o compatible con los valores de los case, se ejecutara inmediatamente el código del default.
+
+
+3. Serie C (Operador Ternario o Condicional Ternario), su sintaxis permite simplificar un condicional if, para dos posibles resultados, uno si es verdadero y otro de ser falso, son muy utiles a la hora de simplificar codigo y solamente ocupa una linea.
+
+
+Algo que me di cuenta al utilizarlos, es que el (if, else if, else) se deben usar en ejercicios donde se amerite mas de una condición, puesto que esta sintaxis en muy flexible al tratarse de varias condiciones, mientras que el (switch, case, default) se deben usar en ejercicios donde el fuerte de la resolución radique en establecer una condición que abarque una gran cantidad de resultados posibles, o que no sea necesario utilizar muchos condicionales, es decir el arte del switch se centra en como se plantea el condicional, y por ultimo los operadores ternarios al ser una simplificacion del if, reducen drasticamente la linea de codigo a una sola.
+
+Claro, también parto de lo siguiente, está en la habilidad del programador cual ruta escoger, sin embargo siempre va a existir un camino mas corto que otro para llegar a la solución.
+
+
+¿Puedo combinar funciones y condicionales?
+
+R: Por supuesto que si, dentro de una función se puede establecer una tarea que amerite el uso de algún condicional para dirigir como se ejecutara el código que encapsula la función, claro esto siempre y cuando sea necesario en el ejercicio. 
+
+Y por otro, dentro del flujo de ejecución o en la estructura de un condicional, es posible hacer la llamada de una función cuando se cumpla o no una condición o caso, en si depende de la lógica del ejercicio en como se utilizaran entre ellos.
+
+2.  Replica el comportamiento del siguiente código que usa la sentencia switch utilizando if, else y else if:
+
+
+
+```
+const tipoDeSuscripcion = "Basic";
+
+switch (tipoDeSuscripcion) {
+   case "Free":
+       console.log("Solo puedes tomar los cursos gratis");
+       break;
+   case "Basic":
+       console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+       break;
+   case "Expert":
+       console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+       break;
+   case "ExpertPlus":
+       console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+       break;
+}
+```
+
+Respuesta.
+
+
+```
+const tipoDeSuscripcion = "Basic";
+
+if(tipoDeSuscripcion === "Free"){
+    console.log("Solo puedes tomar los cursos gratis");
+
+}else if(tipoDeSuscripcion === "Basic"){
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+
+}else if(tipoDeSuscripcion === "Expert"){
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+
+}else{
+    console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+
+}
+```
+
+El único detalle que tengo con este ejercicio es que el **else**, pasara a ser un **else if**, con un condicional para la opción "ExpertPlus", de esta manera solo al colocar esa opción se ejecutaría el console.log con el mensaje de ese tipo de suscripción, y por ultimo se dejaría un else, con un console.log, que indique que la opción seleccionada es incorrecta o no existe. Algo como esto.
+
+
+
+```
+const tipoDeSuscripcion = "Basic";
+
+if(tipoDeSuscripcion === "Free"){
+    console.log("Solo puedes tomar los cursos gratis");
+
+}else if(tipoDeSuscripcion === "Basic"){
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+
+}else if(tipoDeSuscripcion === "Expert"){
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+
+}else if(tipoDeSuscripcion === "ExpertPlus"){
+    console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+
+}else{
+    console.log("Elección incorrecta");
+
+}
+```
+
+3. Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
+
+
+```
+const tipoDeSuscripcion = "Basic";
+
+if(tipoDeSuscripcion === "Free"){
+    console.log("Solo puedes tomar los cursos gratis");
+
+}if(tipoDeSuscripcion === "Basic"){
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+
+}if(tipoDeSuscripcion === "Expert"){
+    console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+
+}if(tipoDeSuscripcion === "ExpertPlus"){
+    console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+
+}
+```
+
+Otra forma de ver este resultado, es aplicando un operador ternario ya que es una simplificacion del condicional if, el ejercicio puede quedar de la siguiente forma.
+
+```
+const tipoDeSuscripcion = "Basic";
+
+console.log(tipoDeSuscripcion === "Free" ? "Solo puedes tomar los cursos gratis" : tipoDeSuscripcion === "Basic" ? "Puedes tomar casi todos los cursos de Platzi durante un mes" :tipoDeSuscripcion === "Expert" ? "Puedes tomar casi todos los cursos de Platzi durante un año" : tipoDeSuscripcion === "ExpertPlus" ? "Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año" : "Elección Incorrecta");
+```
+
+Donde teoricamente sólo se está aplicando el if para cada condicion.
+
+
+Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays y un solo condicional. 😏
+
+```
+var menssages = [
+    "Solo puedes tomar los cursos gratis",
+    "Puedes tomar casi todos los cursos de Platzi durante un mes",
+    "Puedes tomar casi todos los cursos de Platzi durante un año",
+    "Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año"
+];
+
+const tipoDeSuscripcion = "Basic";
+
+console.log(tipoDeSuscripcion === "Free" ? menssages[0] : tipoDeSuscripcion === "Basic" ? menssages[1] :tipoDeSuscripcion === "Expert" ? menssages[2] : tipoDeSuscripcion === "ExpertPlus" ? menssages[3] : "Elección Incorrecta");
+```
+
+
+Me gusta usar mucho los operadores ternarios, es una forma de simplificar expresiones logicas del if, y los arrays pueden hacer mas corto un mensaje.
+
+
+**Ciclos**
+
+1. Responde las siguientes preguntas en la sección de comentarios:
+
+¿Qué es un ciclo?
+
+R: Es una expresion sintactica que permite repetir n cantidad de veces una o varias instrucciones, es decir un trozo de codigo.
+
+¿Qué tipos de ciclos existen en JavaScript?
+
+R: En JavaScript existen 2 tipos, el for y el while. Sin embargo, el loop o Ciclo (Bucle) **for** tiene dos formas de expresarse, 1. Cuando se divide en 3 partes, la 1era que debe inicialiar una variable en index de n, la 2da cumplir con una condicion, y la 3era el aumento de la misma variable, y 2. Cuando se basa en la cantidad de registros o elementos que tiene una variable (for ... of).
+
+¿Qué es un ciclo infinito y por qué es un problema?
+
+R: Es cuando la condicion inicial de un bucle no termina de cumplirse, es decir ejecuta las instrucciones que encapsula sin detenerse, se le conoce como deathloop si mal lo recuerdo, el problema que causa es que al no poder entrar en false el bucle seguirá sin deternerse, causando en algunos casos la sobrecarga de recursos o la paralizacion total de un programa o sistema.
+
+¿Puedo mezclar ciclos y condicionales?
+
+R: Claro, dependiendo de cual sea el caso de uso o requisito que se nos presente, puede prestarse la posibilidad de que que se debe usar un condicional, en el cual si se cumple se va a ejecutar unas instrucciones y estas instrucciones pueden ser un bucle (ciclo).
+
+Por otro lado, en el caso de que se desea que un bucle en un principio ejecute una ruta especifica del codigo por medio de un condicional, y luego en un ciclo n del bucle, el condicional se cambia al otro resultado posible cerrando luego el bucle.
+
+En si todo depende de como es la naturaleza del requisito o caso de uso.
+
+
+2. Replica el comportamiento de los siguientes ciclos for utilizando ciclos while:
+
+Primer Ciclo **for**
+
+```
+//1
+for (let i = 0; i < 5; i++) {
+    console.log("El valor de i es: " + i);
+}
+
+```
+
+Interpretacion de este bucle en **while**
+
+En mi caso encontre 3 versiones distintas para replicar el comportamiento de este for en while.
+
+
+```
+//interpretacion while
+
+//Version 01
+var i = 0;
+while(i<5){
+    console.log("El valor de i es: " + i);
+    i++
+}
+
+//Version 02
+var i = [0,1,2,3,4,5]
+while(i[0]<5){
+    p = i.shift();
+    console.log("El valor de i es: " + p);
+
+}
+
+//Version 03
+var i = [4,3,2,1,0]
+while(i[0]<5){
+    p = i.pop();
+    console.log("El valor de i es: " + p);
+
+}
+
+```
+
+
+Segundo Ciclo **for**
+
+```
+//2
+for (let i = 10; i >= 2; i--) {
+    console.log("El valor de i es: " + i);
+}
+
+```
+
+Interpretacion de este bucle en **while**
+
+En mi caso encontre 4 versiones distintas para replicar el comportamiento de este for en while.
+
+```
+//interpretacion while
+
+// Version 01
+var i = 10;
+while(i>1){
+    console.log("El valor de i es: " + i);
+    i--
+}
+
+//Version 02
+var i = [10,9,8,7,6,5,4,3,2,1];
+while(i[0]>1){
+    p = i.shift();
+    console.log("El valor de i es: " + p);
+
+}
+
+//Version 03
+var i = [10,9,8,7,6,5,4,3,2,1];
+while(i.length > 1){
+    p = i.shift();
+    console.log("El valor de i es: " + p);
+
+}
+
+//Version 04
+var i = [1,2,3,4,5,6,7,8,9,10];
+while(i.length > 1){
+    p = i.pop();
+    console.log("El valor de i es: " + p);
+
+}
+
+```
+
+3. Escribe un código en JavaScript que le pregunte a los usuarios cuánto es 2 + 2. Si responden bien, mostramos un mensaje de felicitaciones, pero si responden mal, volvemos a empezar.
+
+Ya que en el enunciado afirma que se debe hacer una validacion para comprobar si el Usuario introdujo la respuesta correcta, solo en el caso en que fuese incorrecta se debe repetir o volver a empezar la intruccion.
+
+Para ello utilicé tanto los dos Ciclos permitidos (for y while) para la repetición de las intrucciones, como los condicionales disponibles para las comprobaciones, es por ello que a continuación mostraré distintas versiones del mismo ejercicio. 
+
+
+**Usando el Ciclo while**
+
+```
+//Version 01, con (if)
+i=1;
+while(i===1){
+    var respuesta = prompt("¿Cuánto es 2 + 2?", "Escribe tú respuesta");
+
+    if(respuesta === "4"){
+        alert("¡Felicitaciones, tú Respuesta es Correcta!");
+        i=0;
+
+    }else{
+        alert("Losentimos, ¿Volvemos a empezar?");
+
+    }
+
+}
+
+
+//Version 02,  con (switch)
+i=1;
+while(i===1){
+    var respuesta = prompt("¿Cuánto es 2 + 2?", "Escribe tú respuesta");
+
+    switch(respuesta === "4"){
+
+        case true:
+            alert("¡Felicitaciones, tú Respuesta es Correcta!");
+            i=0;
+            break
+
+        default:
+            alert("Losentimos, ¿Volvemos a empezar?");
+
+    }
+
+}
+
+
+//Version 03, con un (operador ternario)
+i=1;
+while(i===1){
+    var respuesta = prompt("¿Cuánto es 2 + 2?", "Escribe tú respuesta");
+    alert(respuesta === "4" ? i="¡Felicitaciones, tú Respuesta es Correcta!" : "Losentimos, ¿Volvemos a empezar?");
+
+}
+
+```
+
+**Usando el Ciclo for**
+
+```
+//Version 01, con (if)
+i=1;
+for(i=1; i===1; i = i === 1 ? 1 : 0 ){
+    var respuesta = prompt("¿Cuánto es 2 + 2?", "Escribe tú respuesta");
+
+    if(respuesta === "4"){
+        alert("¡Felicitaciones, tú Respuesta es Correcta!");
+        i=0;
+
+    }else{
+        alert("Losentimos, ¿Volvemos a empezar?");
+
+    }
+
+}
+
+//Version 02,  con (switch)
+i=1;
+for(i=1; i===1; i = i === 1 ? 1 : 0 ){
+    var respuesta = prompt("¿Cuánto es 2 + 2?", "Escribe tú respuesta");
+
+    switch(respuesta === "4"){
+
+        case true:
+            alert("¡Felicitaciones, tú Respuesta es Correcta!");
+            i=0;
+            break
+
+        default:
+            alert("Losentimos, ¿Volvemos a empezar?");
+
+    }
+
+}
+
+//Version 03,  con un (operador ternario)
+for(i = 1; i===1; i= i === 1 ? 1 : 0){
+    var respuesta = prompt("¿Cuánto es 2 + 2?", "Escribe tú respuesta");
+    alert(respuesta === "4" ? i = "¡Felicitaciones, tú Respuesta es Correcta!" : "Losentimos, ¿Volvemos a empezar?");
+
+}
+
+```
+
+
+**Listas**
+
+1. Responde las siguientes preguntas en la sección de comentarios:
+
+¿Qué es un array?
+
+R: Es una estructura de datos, es decir es una estructura con la capacidad de almacenar tanto diferentes datos como mas de un dato, estos datos se les llama elementos y se encuentran indexados con un indice numerico.
+
+¿Qué es un objeto?
+
+R: Es una estructura de datos, salvo que a diferencia de los array los ordena con la estructura de clave-valor, es decir, almacena los datos en pares, la primera es la clave, que es un nombre que lo identifica y la segunda es el valor, que es aquel valor que estará almacenado en la clave.
+
+Tanto los arrays y los objetos tiene metodos, es decir funciones o tareas que pueden ser ejecutados.
+
+
+¿Cuándo es mejor usar objetos o arrays?
+
+R: En ambos casos cuando se debe organizar los datos de forma ordenada, en el caso de los array, normalmente es para listar una serie de datos para luego ser llamados de forma especifica, mientras que en el caso de los objetos cuando sea necesario crear una entidad que posea varios atributos o caracteristicas particulares, y sea muy importante ordenarlos en un mismo conjunto.
+
+¿Puedo mezclar arrays con objetos o incluso objetos con arrays?
+
+R: Ambos al ser estructuras de datos, tienen la particularidad de almacecar cualquier tipo de datos, es por ello que entre ellos es posible al almacenar tanto datos que sean iguales al otro hasta datos del mismo tipo.
+
+
+2. Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.
+
+
+```
+var frutas = [
+    "Mango",
+    "Manzana",
+    "Pera",
+    "Uva",
+    "Fresa",
+    "Guayaba",
+    "Guanabana",
+    "Banana",
+    "Durazno",
+    "Naranja"
+]
+
+function printarray(elementos){
+    console.log(elementos[0]);
+
+}
+
+printarray(frutas);
+```
+
+3. Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).
+
+```
+var frutas = [
+    "Mango",
+    "Manzana",
+    "Pera",
+    "Uva",
+    "Fresa",
+    "Guayaba",
+    "Guanabana",
+    "Banana",
+    "Durazno",
+    "Naranja"
+]
+
+function printarray(elementos){
+
+    for(elemento of elementos){
+        console.log(elemento);
+
+    }
+
+}
+
+printarray(frutas);
+
+```
+
+4️. Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo).
+
+
+Debo admitir que me gusto el reto de este ultimo ejercicio, jejeje tuve que investigar en google como a traves de un metodo lograr extraer las claves (keys) y los valores (values) ya que la logica dentro de la funcion debe ser general para cualquier objeto que se pase por parametro, lo sorprendente para mi fue encontrar dos metodos que ademas de realizar esto los guarda ordanadamente dentro de un array, es por ello que lo unico que me quedo fue hacer un Ciclo (Bucle o loop) para que imprimiera uno a uno cada elemento del objeto.
+
+```
+var Auto = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    annio: "2022",
+    color: "Blanco",
+    uso: "Particular",
+    placa: "AXL SDD",
+    serialCarroceria: "ASDFKJNSDOI444 OIASD444",
+    serialMotor: "FFACCC333"
+}
+
+
+function printObject(object){
+    keys = Object.keys(object);
+    values = Object.values(object);
+    
+    for(i=0; keys.length > i; i++){
+        console.log(`${keys[i]}: "${values[i]}"`);
+    }
+}
+
+printObject(Auto);
+```
+
+Wow me gusto mucho la prueba, en algunas partes fue tedioso, pero a pesar de todo aprendi nuevas cosas y aplique criterios que ya habia aprendido en el curso basico de Js con el profesor Diego de Granda, excelente empecemos a por los siguientes retos :).
